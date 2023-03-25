@@ -15,7 +15,9 @@ btn.addEventListener("click", (e) => {
     .then((data) => {
       console.log(data);
       output.innerHTML = "<div>Results for " + searchTerm + "</div>";
-      output.innerHTML = `Total results: ${data.query.searchinfo}<br>`;
+      console.log(searchTerm);
+      output.innerHTML = `Total results: ${data.query.searchinfo.totalhits}<br>`;
+      console.log(data.query.searchinfo.totalhits);
       maker(data.query.search);
     });
 });
